@@ -1,7 +1,7 @@
 import re
 
 def process_mul(mul_text):
-    patt = "\d+"
+    patt = "\\d+"
     mat = list(map(int, re.findall(patt, mul_text)))
     
     return mat[0] * mat[1]
@@ -11,8 +11,8 @@ with open("input.txt") as f:
     sum1 = 0
     sum2 = 0
     active = True
-    mul_patt = "mul\(\d{1,3},\d{1,3}\)"
-    switch_patt = "do\(\)|don't\(\)"
+    mul_patt = "mul\\(\\d{1,3},\\d{1,3}\\)"
+    switch_patt = "do\\(\\)|don't\\(\\)"
     active_ranges = []
     on_min = 0 # on by default
     for line in f:
