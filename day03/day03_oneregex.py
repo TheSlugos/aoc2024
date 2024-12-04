@@ -1,5 +1,8 @@
 import re
 
+def mul(a, b):
+    return a * b
+
 def process_mul(mul_text):
     patt = "\\d+"
     mat = list(map(int, re.findall(patt, mul_text)))
@@ -24,6 +27,7 @@ with open("input.txt") as f:
             elif "mul" in s.group():
                 # should be mul as the only other option
                 prod = process_mul(s.group())
+                #prod = eval(s.group())
                 sum1 = sum1 + prod
                 if active:
                     sum2 = sum2 + prod
