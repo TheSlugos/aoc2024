@@ -1,4 +1,4 @@
-import pathlib
+from pathlib import Path
 
 class aoc:
     def __init__(self):
@@ -25,7 +25,7 @@ class aoc:
             i += 1
     
     def run(self, fn):
-        with open(pathlib.Path(__file__).parent.joinpath(fn), "r") as f:
+        with open(Path(__file__).parent.joinpath(fn), "r") as f:
             for line in f:
                 if '|' in line:
                     x = list(map(int, line.strip().split("|")))
